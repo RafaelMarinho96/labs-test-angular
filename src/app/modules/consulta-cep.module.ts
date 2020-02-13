@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 // Components
 import { ConsultaCepComponent } from "@modules/consulta-cep.component";
@@ -17,10 +17,11 @@ import { AgmCoreModule } from "@agm/core";
     ],
     imports: [
         CommonModule,
+        FormsModule,
         ReactiveFormsModule,
         HelperTextModule,
         AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyD0isqKS8bOqXcAW8eIXnTFJMz2zuL02Sk'
+            apiKey: 'AIzaSyCz9YJFL0cXt1IGUTVOfG6UNinhcpg6AjA'
         })
     ],
     exports: [
