@@ -6,17 +6,17 @@ import { ViaCepService } from "app/core/services/via-cep.service";
     selector: 'app-busca',
     template: `
         <div>
-            <form [formGroup]="buscaForm" (ngSubmit)="consultaCep()">
+            <form #form="ngForm" [formGroup]="buscaForm" (ngSubmit)="consultaCep()">
                 <h3>Consultar</h3>
                 busca: <input type="text" formControlName="cep">
                 <input type="submit" value="Consultar">
                 <helper-text 
                     [value]="'Preencha todos os campos'"
-                    *ngIf="buscaForm.get('cep').errors?.required">
+                    *ngIf="buscaForm.get('cep').errors?.required && (form.submitted || buscaForm.get('cep').touched)">
                 </helper-text>
                 <helper-text 
                     [value]="'Complete todos os digitos'"
-                    *ngIf="buscaForm.get('cep').errors?.minlength">
+                    *ngIf="buscaForm.get('cep').errors?.minlength  && (form.submitted || buscaForm.get('cep').touched)">
                 </helper-text>
             </form>
         </div>
@@ -47,12 +47,13 @@ export class BuscaComponent implements OnInit {
     consultaCep(){
         let cep = this.buscaForm.get('cep').value;
 
-        this.viaCep.getCep(cep).subscribe((result) => {
-            console.log(result);
-        },
-        (error) => {
-            console.log(error);
-        })
-        
+        if(this.buscaForm.valid && !this.buscaForm.pending){
+            this.viaCep.getCep(cep).subscribe((result) => {
+                console.log(result);
+            },
+            (error) => {
+                console.log(error);
+            })
+        }
     }
 }
