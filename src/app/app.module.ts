@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 
 // Modules
 import { ConsultaCepModule } from './modules/consulta-cep.module';
+import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app.routing';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { AppRoutingModule } from './app.routing';
     HttpClientModule,
     ReactiveFormsModule,
     ConsultaCepModule,
+    CoreModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     template: `
@@ -7,4 +7,6 @@ import { Component } from "@angular/core";
     styleUrls: ['./mapa.component.scss']
 })
 
-export class MapaComponent {}
+export class MapaComponent {
+
+}

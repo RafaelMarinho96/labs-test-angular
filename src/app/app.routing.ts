@@ -7,7 +7,10 @@ import { ConsultaCepComponent } from "./modules/consulta-cep.component";
 const ROUTES: Routes = [
     { 
         path: '',
-        component: ConsultaCepComponent
+        component: ConsultaCepComponent,
+        data: {
+            title: 'Labs - Consulta CEP'
+        }
     }
 ]
 
