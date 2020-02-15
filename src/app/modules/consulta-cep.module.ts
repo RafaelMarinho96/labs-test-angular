@@ -8,12 +8,14 @@ import { BuscaComponent } from "@modules/consulta-cep/busca/busca.component";
 import { MapaComponent } from "@modules/consulta-cep/mapa/mapa.component";
 import { HelperTextModule } from "app/shared/components/helper-text/helper-text.module";
 import { AgmCoreModule } from "@agm/core";
+import { NumericDirective } from "app/core/directives/only-number.directive";
 
 @NgModule({
     declarations: [
         ConsultaCepComponent,
         BuscaComponent,
-        MapaComponent
+        MapaComponent,
+        NumericDirective
     ],
     imports: [
         CommonModule,

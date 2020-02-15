@@ -8,14 +8,14 @@ import { ViaCepService } from "app/core/services/via-cep.service";
         <div>
             <form #form="ngForm" [formGroup]="buscaForm" (ngSubmit)="consultaCep()">
                 <h3>Consultar</h3>
-                busca: <input type="text" formControlName="cep">
+                busca: <input numeric type="text" maxLength="8" formControlName="cep">
                 <input type="submit" value="Consultar">
                 <helper-text 
                     [value]="'Preencha todos os campos'"
                     *ngIf="buscaForm.get('cep').errors?.required && (form.submitted || buscaForm.get('cep').touched)">
                 </helper-text>
                 <helper-text 
-                    [value]="'Complete todos os digitos'"
+                    [value]="'CPF invalido, preencha todos os campos'"
                     *ngIf="buscaForm.get('cep').errors?.minlength  && (form.submitted || buscaForm.get('cep').touched)">
                 </helper-text>
             </form>
@@ -37,8 +37,8 @@ export class BuscaComponent implements OnInit {
             cep: ['',
                 [
                     Validators.required,
-                    Validators.maxLength(9),
-                    Validators.minLength(9)
+                    Validators.maxLength(8),
+                    Validators.minLength(8)
                 ]
             ]
         })
@@ -49,10 +49,10 @@ export class BuscaComponent implements OnInit {
 
         if(this.buscaForm.valid && !this.buscaForm.pending){
             this.viaCep.getCep(cep).subscribe((result) => {
-                console.log(result);
+                result.erro == true ? console.log("Houve um erro") : console.log(result);
             },
             (error) => {
-                console.log(error);
+                console.log("Houve um erro" + error);
             })
         }
     }
