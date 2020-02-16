@@ -1,6 +1,7 @@
 import { Component, ChangeDetectorRef } from "@angular/core";
 import { GeocodeService } from "app/core/services/geocode.service";
 import { Location } from "../../../core/models/location";
+import { ConsultaCepService } from "@modules/consulta-cep.service";
 
 @Component({
     selector: 'app-mapa',
@@ -38,27 +39,29 @@ import { Location } from "../../../core/models/location";
 
 export class MapaComponent {
 
-    address = 'London';
+    address = '09240210';
     location: Location;
     loading: boolean;
   
     constructor(
       private geocodeService: GeocodeService,
       private ref: ChangeDetectorRef,
+      private consultaCepService: ConsultaCepService
     ) {}
     
     ngOnInit() {
-      this.showLocation();
+      this.consultaCepService.currentCep
+        .subscribe(cep => {
+          console.log(cep);
+          this.addressToCoordinates(cep);
+        })
     }
   
-    showLocation() {
-      this.addressToCoordinates();
-    }
-  
-    addressToCoordinates() {
+    addressToCoordinates(cep: string) {
       this.loading = true;
-      this.geocodeService.geocodeAddress(this.address)
+      this.geocodeService.geocodeAddress(cep)
       .subscribe((location: Location) => {
+          console.log(location);
           this.location = location;
           this.loading = false;
           this.ref.detectChanges();  

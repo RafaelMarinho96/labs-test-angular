@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ViaCepService } from "app/core/services/via-cep.service";
+import { ConsultaCepService } from "@modules/consulta-cep.service";
 
 @Component({
     selector: 'app-busca',
@@ -30,7 +31,8 @@ export class BuscaComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private viaCep: ViaCepService){}
+        private viaCep: ViaCepService,
+        private consultaCepService: ConsultaCepService){}
 
     ngOnInit(): void {
         this.buscaForm = this.formBuilder.group({
@@ -49,7 +51,11 @@ export class BuscaComponent implements OnInit {
 
         if(this.buscaForm.valid && !this.buscaForm.pending){
             this.viaCep.getCep(cep).subscribe((result) => {
-                result.erro == true ? console.log("Houve um erro") : console.log(result);
+                if (result.erro == true){
+
+                }else{
+                    this.consultaCepService.changeCep(cep);
+                }
             },
             (error) => {
                 console.log("Houve um erro" + error);
