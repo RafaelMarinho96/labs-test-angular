@@ -9,6 +9,7 @@ import { MapaComponent } from "@modules/consulta-cep/mapa/mapa.component";
 import { HelperTextModule } from "app/shared/components/helper-text/helper-text.module";
 import { AgmCoreModule } from "@agm/core";
 import { NumericDirective } from "app/core/directives/only-number.directive";
+import { ConsultaCepService } from "./consulta-cep.service";
 
 @NgModule({
     declarations: [
@@ -29,6 +30,9 @@ import { NumericDirective } from "app/core/directives/only-number.directive";
     exports: [
         BuscaComponent,
         MapaComponent
+    ],
+    providers: [
+        ConsultaCepService
     ]
 })
 
