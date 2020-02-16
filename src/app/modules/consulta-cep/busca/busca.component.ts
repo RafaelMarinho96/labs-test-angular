@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ViaCepService } from "app/core/services/via-cep.service";
 import { ConsultaCepService } from "@modules/consulta-cep.service";
+import { Address } from "app/core/models/address";
 
 @Component({
     selector: 'app-busca',
@@ -50,11 +51,11 @@ export class BuscaComponent implements OnInit {
         let cep = this.buscaForm.get('cep').value;
 
         if(this.buscaForm.valid && !this.buscaForm.pending){
-            this.viaCep.getCep(cep).subscribe((result) => {
-                if (result.erro == true){
+            this.viaCep.getCep(cep).subscribe((address: Address) => {
+                if (address.erro == true){
 
                 }else{
-                    this.consultaCepService.changeCep(cep);
+                    this.consultaCepService.changeCep(address);
                 }
             },
             (error) => {

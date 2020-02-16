@@ -1,17 +1,19 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 
+import { Address } from "app/core/models/address";
+
 
 @Injectable()
 
 export class ConsultaCepService {
 
-    private cepSource = new BehaviorSubject<string>("09240210");
-    currentCep = this.cepSource.asObservable();
+    private addressSource = new BehaviorSubject<any>('São Paulo');
+    currentAddress= this.addressSource.asObservable();
 
     constructor(){}
 
-    changeCep(cep: string){
-        this.cepSource.next(cep);
+    changeCep(address: Address){
+        this.addressSource.next(address);
     }
 }

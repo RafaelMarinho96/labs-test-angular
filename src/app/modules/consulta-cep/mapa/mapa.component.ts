@@ -2,6 +2,7 @@ import { Component, ChangeDetectorRef } from "@angular/core";
 import { GeocodeService } from "app/core/services/geocode.service";
 import { Location } from "../../../core/models/location";
 import { ConsultaCepService } from "@modules/consulta-cep.service";
+import { Address } from "app/core/models/address";
 
 @Component({
     selector: 'app-mapa',
@@ -13,10 +14,10 @@ import { ConsultaCepService } from "@modules/consulta-cep.service";
     <div class="map">
       <div class="map__header">
           <div class="map__address">
-            <h2>Rua Miguel Mentem</h2>
-            <p>Vila Guilherme</p>
-            <p>São Paulo - SP</p>
-            <p>02050-010</p>
+            <h2>{{ address?.logradouro }}</h2>
+            <p>{{ address?.bairro }}</p>
+            <p>{{ address?.localidade }} - {{ address?.uf }}</p>
+            <p>{{ address?.cep }}</p>
           </div>
           <div class="map__close">X</div>
       </div>
@@ -39,7 +40,7 @@ import { ConsultaCepService } from "@modules/consulta-cep.service";
 
 export class MapaComponent {
 
-    address = '09240210';
+    address: Address;
     location: Location;
     loading: boolean;
   
@@ -50,10 +51,11 @@ export class MapaComponent {
     ) {}
     
     ngOnInit() {
-      this.consultaCepService.currentCep
-        .subscribe(cep => {
-          console.log(cep);
-          this.addressToCoordinates(cep);
+      this.consultaCepService.currentAddress
+        .subscribe((address: Address) => {
+          console.log(address);
+          this.address = address;
+          this.addressToCoordinates(address.cep);
         })
     }
   
