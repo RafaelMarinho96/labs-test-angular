@@ -5,7 +5,7 @@ import { ViaCepService } from "app/core/services/via-cep.service";
 @Component({
     selector: 'app-busca',
     template: `
-        <div>
+        <div class="search">
             <form #form="ngForm" [formGroup]="buscaForm" (ngSubmit)="consultaCep()">
                 <h3>Consultar</h3>
                 busca: <input numeric type="text" maxLength="8" formControlName="cep">

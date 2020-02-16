@@ -1,0 +1,21 @@
+
+/**
+*
+* SEARCH
+*
+*/
+
+/* Imports */
+@import 'grid';
+@import '_base/mixins';
+@import '_base/theme';
+
+.search{
+    @include make-container();
+    @include make-container-max-widths();
+    @include flexbox();
+
+    @include flex-direction(row);
+    @include align-items(center);
+    height: 150px;
+}
