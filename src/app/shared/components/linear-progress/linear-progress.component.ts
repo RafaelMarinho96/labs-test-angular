@@ -7,14 +7,16 @@ import { map } from "rxjs/operators";
 @Component({
     selector: 'app-linear-progress',
     template: `
-        <hr [ngClass]="linearProgress$ | async">
+        <!--hr [ngClass]="linearProgress$ | async"-->
+        <hr class="loading">
     `,
     styles: [`
         .loading {
             margin: 0;
-            background: linear-gradient(270deg, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
+            border: 0;
+            background: linear-gradient(to right,#ffff4a 0,#fcd000 7%,#ffc112 11%,#ff8a00 17%,#ff5f5f 23%,#ff5156 29%,#ff7ae7 35%,#ff5193 41%,#c739ff 46%,#a400e1 63%,#2eceff 76%,#0086ff 87%,#72f772 97%,#00d604);
             animation: linear-progress 2s ease;
-            height: 0.2em;
+            height: 0.5em;
         }
         @keyframes linear-progress {
             0% {
