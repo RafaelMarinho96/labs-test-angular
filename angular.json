@@ -25,6 +25,13 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                ".",
+                "./src/assets/styles",
+                "./node_modules/bootstrap-4-grid/scss"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

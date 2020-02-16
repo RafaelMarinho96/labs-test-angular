@@ -20,6 +20,8 @@
     "@angular/platform-browser": "^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@angular/router": "^6.0.0",
+    "bootstrap-4-grid": "^3.3.0",
+    "breakpoint-sass": "^2.7.1",
     "core-js": "^2.5.4",
     "npm-font-open-sans": "^1.1.0",
     "rxjs": "^6.0.0",

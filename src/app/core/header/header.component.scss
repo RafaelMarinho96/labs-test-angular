@@ -1,0 +1,32 @@
+
+/**
+*
+* HEADER
+*
+*/
+
+/* Imports */
+@import 'grid';
+@import '_base/mixins';
+@import '_base/theme';
+
+.header {
+    width: 100%;
+    height: 150px;
+    background-color: $primary;
+
+    @include element(container){
+        @include make-container();
+        @include make-container-max-widths();
+        @include flexbox();
+
+        @include flex-direction(row);
+        @include justify-content(center);
+        @include align-items(center);
+        height: 100%;
+    }
+
+    @include element(logo){
+
+    }
+}
