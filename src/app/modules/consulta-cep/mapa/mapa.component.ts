@@ -7,11 +7,7 @@ import { Address } from "app/core/models/address";
 @Component({
     selector: 'app-mapa',
     template: `
-    <!--form (ngSubmit)="showLocation()">
-      <input type="text" [(ngModel)]="address" required [ngModelOptions]="{standalone: true}">
-      <button type="submit">Show Location</button>
-    </form-->
-    <div class="map">
+    <div class="map" [ngClass]="showHide">
       <div class="map__header">
           <div class="map__address">
             <h2>{{ address?.logradouro }}</h2>
@@ -19,7 +15,9 @@ import { Address } from "app/core/models/address";
             <p>{{ address?.localidade }} - {{ address?.uf }}</p>
             <p>{{ address?.cep }}</p>
           </div>
-          <div class="map__close">X</div>
+          <div class="map__close">
+            <button (click)="hideMap()">X</button>
+          </div>
       </div>
 
       <agm-map
@@ -42,7 +40,8 @@ export class MapaComponent {
 
     address: Address;
     location: Location;
-    loading: boolean;
+
+    showHide: string = 'map--hide';
   
     constructor(
       private geocodeService: GeocodeService,
@@ -60,14 +59,18 @@ export class MapaComponent {
     }
   
     addressToCoordinates(cep: string) {
-      this.loading = true;
-      this.geocodeService.geocodeAddress(cep)
-      .subscribe((location: Location) => {
-          console.log(location);
-          this.location = location;
-          this.loading = false;
-          this.ref.detectChanges();  
-        }      
-      );     
+      if (cep !== undefined) {
+        this.geocodeService.geocodeAddress(cep)
+          .subscribe((location: Location) => {
+              console.log(location);
+              this.location = location;
+              this.showHide = '';
+              this.ref.detectChanges();  
+            });   
+      } 
+    }
+
+    hideMap(){
+      this.showHide = 'map--hide';
     }
 }

@@ -19,6 +19,10 @@
         @include justify-content(space-between)
     }
 
+    @include modifier(hide){
+        display: none;
+    }
+    
     agm-map{
         width: 100%;
         height: 400px;
