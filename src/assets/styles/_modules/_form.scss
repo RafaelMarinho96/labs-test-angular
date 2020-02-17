@@ -1,0 +1,75 @@
+/**
+*
+* FORM
+*
+*/
+
+/* IMPORTS */
+@import '_base/variables';
+@import '_base/mixins';
+@import '_base/theme';
+
+.form{
+	height:auto;
+	overflow:hidden;
+    
+    @include element(title){
+        font-size: 1.2em;
+        font-weight: $bold;
+    }
+
+    @include element(row){
+        @include modifier(inline){
+            margin: 1.5em 0 0 0;
+        }   
+    }
+
+    @include element(input){
+        @include modifier(inline){
+            margin: 15px 0;
+            padding: 10px 10px;
+            width: 100%;
+            outline: none;
+            border: 1px solid $gray;
+            @include border-radius(4px);
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+                    box-sizing:border-box;
+            -webkit-transition:0.2s ease all;
+            -moz-transition:0.2s ease all;
+                -ms-transition:0.2s ease all;
+                -o-transition:0.2s ease all;
+                    transition:0.2s ease all;
+        }
+    }
+
+    @include element(label){
+        @include modifier(inline){
+            margin: 0 1.0em 0 0;
+        }
+    }
+
+    @include element(button){
+        @include modifier(inline){
+            background-color: $success; 
+            border: none;
+            color: $white;
+            padding: 10px 32px;
+            margin: 0.5em 1.0em;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: $semibold;
+            font-size: 16px;
+            @include border-radius(4px);
+        }
+    }
+
+    @include element(group){
+        @include modifier(inline){
+            @include flexbox;
+            @include justify-content(center);
+            @include align-items(center);
+        }
+    }
+}

@@ -8,10 +8,16 @@ import { Address } from "app/core/models/address";
     selector: 'app-busca',
     template: `
         <div class="search">
-            <form #form="ngForm" [formGroup]="buscaForm" (ngSubmit)="consultaCep()">
-                <h3>Consultar</h3>
-                busca: <input numeric type="text" maxLength="8" formControlName="cep">
-                <input type="submit" value="Consultar">
+            <form #form="ngForm" [formGroup]="buscaForm" (ngSubmit)="consultaCep()" class="form">
+                <h3 class="form__title">Consultar</h3>
+                <div class="form__row--inline">
+                    <div class="form__group--inline">
+                        <label class="form__label--inline">CEP:</label>
+                        <input numeric type="text" maxLength="8" formControlName="cep" class="form__input--inline">
+                        <input type="submit" value="Consultar" class="form__button--inline">
+                    </div>
+                </div>
+                
                 <helper-text 
                     [value]="'Preencha todos os campos'"
                     *ngIf="buscaForm.get('cep').errors?.required && (form.submitted || buscaForm.get('cep').touched)">

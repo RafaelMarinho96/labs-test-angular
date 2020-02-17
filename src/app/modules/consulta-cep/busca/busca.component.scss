@@ -11,11 +11,14 @@
 @import '_base/theme';
 
 .search{
+    margin: 40px 0;
+    padding: 30px 0;
+    background-color: lighten($gray, 22);
+    @include border-radius(4px);
     @include make-container();
     @include make-container-max-widths();
     @include flexbox();
 
     @include flex-direction(row);
     @include align-items(center);
-    height: 150px;
 }
