@@ -1,0 +1,11 @@
+@import '_base/theme';
+@import '_base/variables';
+
+.helper-text{
+    display: block;
+    font-size: 0.7em;
+    text-align: right;
+    margin-top: 0.2em;
+    color: $red;
+    font-weight: $semibold;
+}

@@ -13,19 +13,20 @@ import { Address } from "app/core/models/address";
                 <div class="form__row--inline">
                     <div class="form__group--inline">
                         <label class="form__label--inline">CEP:</label>
-                        <input type="text" mask="99999-999" placeholder="00000-000" formControlName="cep" class="form__input--inline">
+                        <div>
+                            <input type="text" mask="99999-999" placeholder="00000-000" formControlName="cep" class="form__input--inline">
+                            <helper-text 
+                                [value]="'Preencha o CEP'"
+                                *ngIf="buscaForm.get('cep').errors?.required && (form.submitted || buscaForm.get('cep').touched)">
+                            </helper-text>
+                            <helper-text 
+                                [value]="'Complete o CEP'"
+                                *ngIf="buscaForm.get('cep').errors?.minlength  && (form.submitted || buscaForm.get('cep').touched)">
+                            </helper-text>
+                        </div>
                         <input type="submit" value="Consultar" class="form__button--inline">
                     </div>
-                </div>
-                
-                <helper-text 
-                    [value]="'Preencha todos os campos'"
-                    *ngIf="buscaForm.get('cep').errors?.required && (form.submitted || buscaForm.get('cep').touched)">
-                </helper-text>
-                <helper-text 
-                    [value]="'CPF invalido, preencha todos os campos'"
-                    *ngIf="buscaForm.get('cep').errors?.minlength  && (form.submitted || buscaForm.get('cep').touched)">
-                </helper-text>
+                </div>                
             </form>
         </div>
     `,

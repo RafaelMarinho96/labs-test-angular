@@ -25,7 +25,8 @@
 
     @include element(header){
         @include flexbox;
-        @include justify-content(space-between)
+        @include justify-content(space-between);
+        margin-bottom: 1.0em;
     }
 
     @include element(address){

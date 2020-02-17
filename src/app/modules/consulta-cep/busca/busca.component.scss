@@ -16,10 +16,6 @@
     @include border-radius(4px);
     @include make-container();
     @include make-container-max-widths();
-    @include flexbox();
-
-    @include flex-direction(row);
-    @include align-items(center);
 
     .form{
         @include make-col(10);
