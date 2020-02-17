@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@angular/router": "^6.0.0",
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "bootstrap-4-grid": "^3.3.0",
     "breakpoint-sass": "^2.7.1",
     "core-js": "^2.5.4",

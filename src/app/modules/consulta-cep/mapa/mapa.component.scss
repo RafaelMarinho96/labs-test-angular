@@ -7,16 +7,46 @@
 
 /* Imports */
 @import 'grid';
+@import '_base/variables';
 @import '_base/mixins';
 @import '_base/theme';
 
 .map{
     @include make-container();
     @include make-container-max-widths();
+    @include border-radius(4px);
+    padding: 30px;
+    border: 1px solid $light;
     
     @include element(header){
         @include flexbox;
         @include justify-content(space-between)
+    }
+
+    @include element(address){
+        p{
+            font-size: 1.2em;
+            line-height: 1.4em;
+            font-weight: $regular;
+        }
+
+        @include modifier(title){
+            font-size: 1.3em !important;
+            font-weight: $bold !important;
+        }
+    }
+
+    @include element(button){
+        @include modifier(close){
+            font-size: 1.2em;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            &:hover{
+                font-size: 1.25em;
+            }
+        }
     }
 
     @include modifier(hide){

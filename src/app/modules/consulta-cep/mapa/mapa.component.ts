@@ -9,21 +9,31 @@ import { Address } from "app/core/models/address";
     template: `
     <div class="map" [ngClass]="showHide">
       <div class="map__header">
-          <div class="map__address">
-            <h2>{{ address?.logradouro }}</h2>
+          <!--div class="map__address">
+            <p class="map__address--title">{{ address?.logradouro }}</p>
             <p>{{ address?.bairro }}</p>
             <p>{{ address?.localidade }} - {{ address?.uf }}</p>
             <p>{{ address?.cep }}</p>
+          </div-->
+
+          <div class="map__address">
+            <p class="map__address--title">Rua Guilherme Melhem</p>
+            <p>Jardim Santos</p>
+            <p>São Paulo - SP</p>
+            <p>09240-210</p>
           </div>
+
           <div class="map__close">
-            <button (click)="hideMap()">X</button>
+            <button class="map__button--close" (click)="hideMap()">
+              <i class="fas fa-times"></i>
+            </button>
           </div>
       </div>
 
       <agm-map
         [latitude]="location?.lat"
         [longitude]="location?.lng"
-        [zoom]="8"
+        [zoom]="15"
         [disableDefaultUI]="false"
         [zoomControl]="false">
         <agm-marker 
@@ -41,7 +51,7 @@ export class MapaComponent {
     address: Address;
     location: Location;
 
-    showHide: string = 'map--hide';
+    showHide: string = '';
   
     constructor(
       private geocodeService: GeocodeService,
