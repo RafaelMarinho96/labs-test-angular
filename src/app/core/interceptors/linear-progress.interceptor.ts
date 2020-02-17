@@ -25,7 +25,7 @@ export class LinearProgressInterceptor implements HttpInterceptor{
                 .handle(req)
                 .pipe(tap(event => {
                     if(event instanceof HttpResponse){
-                        this.linearProgressService.stop();
+                        this.linearProgressService.keep();
                     }else{
                         this.linearProgressService.start();
                     }

@@ -1,6 +1,7 @@
 export enum LinearProgressType {
 
     LOADING = 'loading',
-    STOPPED = 'stopped'
+    STOPPED = 'stopped',
+    KEEP = 'keep'
 
 }

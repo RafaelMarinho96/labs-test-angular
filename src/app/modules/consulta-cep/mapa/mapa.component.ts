@@ -8,39 +8,34 @@ import { Address } from "app/core/models/address";
     selector: 'app-mapa',
     template: `
     <div class="map" [ngClass]="showHide">
-      <div class="map__header">
-          <!--div class="map__address">
-            <p class="map__address--title">{{ address?.logradouro }}</p>
-            <p>{{ address?.bairro }}</p>
-            <p>{{ address?.localidade }} - {{ address?.uf }}</p>
-            <p>{{ address?.cep }}</p>
-          </div-->
-
+      <div class="map__container">
+        <div class="map__header">
           <div class="map__address">
-            <p class="map__address--title">Rua Guilherme Melhem</p>
-            <p>Jardim Santos</p>
-            <p>São Paulo - SP</p>
-            <p>09240-210</p>
-          </div>
+              <p class="map__address--title">{{ address?.logradouro }}</p>
+              <p>{{ address?.bairro }}</p>
+              <p>{{ address?.localidade }} - {{ address?.uf }}</p>
+              <p>{{ address?.cep }}</p>
+            </div>
 
-          <div class="map__close">
-            <button class="map__button--close" (click)="hideMap()">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
+            <div class="map__close">
+              <button class="map__button--close" (click)="hideMap()">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+        </div>
+
+        <agm-map
+          [latitude]="location?.lat"
+          [longitude]="location?.lng"
+          [zoom]="15"
+          [disableDefaultUI]="false"
+          [zoomControl]="false">
+          <agm-marker 
+              [latitude]="location?.lat"
+              [longitude]="location?.lng">   
+          </agm-marker>
+        </agm-map>
       </div>
-
-      <agm-map
-        [latitude]="location?.lat"
-        [longitude]="location?.lng"
-        [zoom]="15"
-        [disableDefaultUI]="false"
-        [zoomControl]="false">
-        <agm-marker 
-            [latitude]="location?.lat"
-            [longitude]="location?.lng">   
-        </agm-marker>
-      </agm-map>
     </div>
     `,
     styleUrls: ['./mapa.component.scss']
@@ -51,7 +46,7 @@ export class MapaComponent {
     address: Address;
     location: Location;
 
-    showHide: string = '';
+    showHide: string = 'map--hide';
   
     constructor(
       private geocodeService: GeocodeService,

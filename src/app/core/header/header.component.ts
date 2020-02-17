@@ -7,7 +7,12 @@ import { LinearProgressService } from "app/shared/components/linear-progress/lin
         <app-linear-progress></app-linear-progress>
         <div class="header">
             <div class="header__container">
-                <h1 class="header__logo">Labs Map</h1>
+                <div class="header__row">
+                    <h1 class="header__logo">GooMaps</h1>
+                    <a href="https://github.com/RafaelMarinho96/labs-test-angular" class="header__button--github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
             </div>
         <div>
     `,
@@ -19,6 +24,6 @@ export class HeaderComponent {
     constructor(private linearProgressService: LinearProgressService){}
 
     ngOnInit(){
-        this.linearProgressService.start();
+        // this.linearProgressService.start();
     }
 }

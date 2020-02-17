@@ -14,7 +14,7 @@ export class LinearProgressService {
     getLinearLoading(){
         return this.linearProgressSubject
             .asObservable()
-            .pipe(startWith(LinearProgressType.STOPPED));
+            .pipe(startWith(LinearProgressType.KEEP));
     }
 
     start(){
@@ -23,5 +23,9 @@ export class LinearProgressService {
 
     stop(){
         this.linearProgressSubject.next(LinearProgressType.STOPPED);
+    }
+
+    keep(){
+        this.linearProgressSubject.next(LinearProgressType.KEEP);
     }
 }
