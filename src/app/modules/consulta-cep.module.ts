@@ -10,6 +10,7 @@ import { HelperTextModule } from "app/shared/components/helper-text/helper-text.
 import { AgmCoreModule } from "@agm/core";
 import { NumericDirective } from "app/core/directives/only-number.directive";
 import { ConsultaCepService } from "./consulta-cep.service";
+import { NgxMaskModule } from 'ngx-mask'
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { ConsultaCepService } from "./consulta-cep.service";
         HelperTextModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyCz9YJFL0cXt1IGUTVOfG6UNinhcpg6AjA'
-        })
+        }),
+        NgxMaskModule.forRoot()
     ],
     exports: [
         BuscaComponent,

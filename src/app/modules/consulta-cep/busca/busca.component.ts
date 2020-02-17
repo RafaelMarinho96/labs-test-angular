@@ -13,7 +13,7 @@ import { Address } from "app/core/models/address";
                 <div class="form__row--inline">
                     <div class="form__group--inline">
                         <label class="form__label--inline">CEP:</label>
-                        <input numeric type="text" maxLength="8" formControlName="cep" class="form__input--inline">
+                        <input type="text" mask="99999-999" placeholder="00000-000" formControlName="cep" class="form__input--inline">
                         <input type="submit" value="Consultar" class="form__button--inline">
                     </div>
                 </div>
@@ -55,6 +55,8 @@ export class BuscaComponent implements OnInit {
 
     consultaCep(){
         let cep = this.buscaForm.get('cep').value;
+
+        cep = cep.replace('-','');
 
         if(this.buscaForm.valid && !this.buscaForm.pending){
             this.viaCep.getCep(cep).subscribe((address: Address) => {
