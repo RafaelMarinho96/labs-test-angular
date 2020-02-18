@@ -1,20 +1,17 @@
-
 /**
-*
-* SEARCH
-*
+* BUSCA: Estilos do component de Busca.
 */
 
-/* Imports */
+/* IMPORTS */
 @import 'grid';
 @import 'breakpoint';
 @import '_base/variables';
 @import '_base/mixins';
 @import '_base/theme';
 
+/* SEARCH */
 .search{
     margin: 30px 0;
-    
     @include border-radius(4px);
     @include make-container();
     @include make-container-max-widths();

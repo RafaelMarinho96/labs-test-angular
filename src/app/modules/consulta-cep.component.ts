@@ -4,8 +4,7 @@ import { Component } from "@angular/core";
     template: `
         <app-busca></app-busca>
         <app-mapa></app-mapa>
-    `,
-    styleUrls: ['./consulta-cep.component.scss']
+    `
 })
 
 export class ConsultaCepComponent {}

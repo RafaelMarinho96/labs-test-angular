@@ -1,8 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+
+// Models
+import { Address } from "app/core/models/address";
+
+// Services
 import { ViaCepService } from "app/core/services/via-cep.service";
 import { ConsultaCepService } from "@modules/consulta-cep.service";
-import { Address } from "app/core/models/address";
+
+// Vendors
 import { SnackbarService } from 'ngx-snackbar';
 
 @Component({

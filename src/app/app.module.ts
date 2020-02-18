@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserModule } from '@angular/platform-browser';
 
 // Components
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { AppRoutingModule } from './app.routing';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     ReactiveFormsModule,
     ConsultaCepModule,
     CoreModule,

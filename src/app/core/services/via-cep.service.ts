@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
-import { HttpService } from "./http.service";
+import { HttpClient } from "@angular/common/http";
+
+import { environment } from "@environments/environment";
 
 @Injectable({
     providedIn: 'root'
@@ -7,9 +9,9 @@ import { HttpService } from "./http.service";
 
 export class ViaCepService {
 
-    constructor(private http: HttpService){}
+    constructor(private http: HttpClient){}
 
     getCep(cep: number){
-        return this.http.get(cep + '/json');
+        return this.http.jsonp(`${environment.viacep}${cep}/json/?callback=cep`, 'callback');
     }
 }

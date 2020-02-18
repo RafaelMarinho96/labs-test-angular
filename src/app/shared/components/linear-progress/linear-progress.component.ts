@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { LinearProgressService } from "./linear-progress.service";
-import { Observable } from "rxjs";
-import { LinearProgressType } from "./linear-progress-type";
 import { map } from "rxjs/operators";
+import { Observable } from "rxjs";
+
+// Services
+import { LinearProgressService } from "./linear-progress.service";
 
 @Component({
     selector: 'app-linear-progress',

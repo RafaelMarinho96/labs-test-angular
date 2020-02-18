@@ -1,17 +1,15 @@
-
 /**
-*
-* MAP
-*
+* MAP: Estilos do componente de MAP.
 */
 
-/* Imports */
+/* IMPORTS */
 @import 'grid';
 @import 'breakpoint';
 @import '_base/variables';
 @import '_base/mixins';
 @import '_base/theme';
 
+/* MAP */
 .map{
     @include make-container();
     @include make-container-max-widths();
@@ -37,8 +35,8 @@
 
     @include element(address){
         p{
-            font-size: 1.0em;
             line-height: 1.5em;
+            font-size: 1.0em;
             font-weight: $regular;
         }
 
@@ -50,9 +48,9 @@
 
     @include element(button){
         @include modifier(close){
-            font-size: 1.2em;
             background-color: transparent;
             border: none;
+            font-size: 1.2em;
             cursor: pointer;
 
             &:hover{

@@ -5,6 +5,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { ConsultaCepComponent } from "./modules/consulta-cep.component";
 import { NotFoundComponent } from "./core/errors/not-found/not-found.component";
 
+// Routes
 const ROUTES: Routes = [
     { 
         path: '',

@@ -1,17 +1,15 @@
-
 /**
-*
 * HEADER
-*
 */
 
-/* Imports */
+/* IMPORTS */
 @import 'grid';
 @import 'breakpoint';
 @import '_base/variables';
 @import '_base/mixins';
 @import '_base/theme';
 
+/* HEADER */
 .header{
     @include modifier(line){
         margin: 0;

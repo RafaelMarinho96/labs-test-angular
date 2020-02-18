@@ -1,8 +1,12 @@
 import { Component, ChangeDetectorRef } from "@angular/core";
-import { GeocodeService } from "app/core/services/geocode.service";
-import { Location } from "../../../core/models/location";
-import { ConsultaCepService } from "@modules/consulta-cep.service";
+
+// Models
+import { Location } from "app/core/models/location";
 import { Address } from "app/core/models/address";
+
+// Services
+import { ConsultaCepService } from "@modules/consulta-cep.service";
+import { GeocodeService } from "app/core/services/geocode.service";
 
 @Component({
     selector: 'app-mapa',

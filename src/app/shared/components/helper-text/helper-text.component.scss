@@ -1,11 +1,17 @@
+/**
+ * Helper Text: Compoenente utilizado para fornecer as mensagens de validações no Input.
+*/
+
+/* IMPORTS */
 @import '_base/theme';
 @import '_base/variables';
 
+/* HELPER TEXT */
 .helper-text{
     display: block;
-    font-size: 0.7em;
-    text-align: right;
     margin-top: 0.2em;
     color: $red;
+    font-size: 0.7em;
     font-weight: $semibold;
+    text-align: right;
 }

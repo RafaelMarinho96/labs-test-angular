@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
-import { LinearProgressType } from "./linear-progress-type";
 import { startWith } from "rxjs/operators";
+
+// Enums
+import { LinearProgressType } from "./linear-progress-type";
 
 @Injectable({
     providedIn: 'root'
@@ -17,14 +19,17 @@ export class LinearProgressService {
             .pipe(startWith(LinearProgressType.KEEP));
     }
 
+    // Start Linear Progress
     start(){
         this.linearProgressSubject.next(LinearProgressType.LOADING);
     }
 
+    // Stop Linear Progress
     stop(){
         this.linearProgressSubject.next(LinearProgressType.STOPPED);
     }
 
+    // Keep Full Progress Bar
     keep(){
         this.linearProgressSubject.next(LinearProgressType.KEEP);
     }
