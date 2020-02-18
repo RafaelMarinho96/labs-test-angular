@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { LinearProgressService } from "app/shared/components/linear-progress/linear-progress.service";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-header',
@@ -8,7 +8,7 @@ import { LinearProgressService } from "app/shared/components/linear-progress/lin
         <div class="header">
             <div class="header__container">
                 <div class="header__row">
-                    <div class="header__logo"></div>
+                    <a routerLink="/" class="header__logo"></a>
                     <a href="https://github.com/RafaelMarinho96/labs-test-angular" class="header__button--github">
                         <i class="fab fa-github"></i>
                     </a>
@@ -21,9 +21,10 @@ import { LinearProgressService } from "app/shared/components/linear-progress/lin
 
 export class HeaderComponent {
 
-    constructor(private linearProgressService: LinearProgressService){}
+    constructor(
+        private router: Router){}
 
-    ngOnInit(){
-        // this.linearProgressService.start();
+    onClickLogo(){
+        this.router.navigate['/'];
     }
 }
