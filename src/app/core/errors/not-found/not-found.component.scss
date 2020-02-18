@@ -1,0 +1,56 @@
+
+/**
+*
+* NOT FOUND
+*
+*/
+
+/* Imports */
+@import 'grid';
+@import 'breakpoint';
+@import '_base/variables';
+@import '_base/mixins';
+@import '_base/theme';
+
+.not-found {
+    @include make-container();
+    @include make-container-max-widths();
+
+    @include element(text){
+        width: 70%;
+        font-size: 1.4em;
+        font-weight: $regular;
+        color: $gray;
+        margin: 1em auto;
+        text-align: center;
+    }
+
+    @include element(subtitle){
+        width: 70%;
+        font-size: 1.5em;
+        font-weight: $bold;
+        color: ligthen($black, 30);
+        margin: 1em auto;
+        text-align: center;
+    }
+
+    @include element(button){
+       @include flexbox();
+       @include justify-content(center);
+       padding: 10px 0;
+    }
+
+    @include element(container){
+        @include make-col(10);
+        @include make-col-offset(1);
+
+        h1{
+            font-size: 3.5em;
+            font-weight: $bold;
+            color: $primary;
+            margin-top: 1.5em;
+            text-align: center;
+        }
+
+    }
+}

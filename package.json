@@ -25,8 +25,10 @@
     "breakpoint-sass": "^2.7.1",
     "core-js": "^2.5.4",
     "ngx-mask": "^8.1.7",
+    "ngx-snackbar": "^1.2.0-rc.2",
     "npm-font-open-sans": "^1.1.0",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.5.4",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

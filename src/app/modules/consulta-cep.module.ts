@@ -11,6 +11,7 @@ import { AgmCoreModule } from "@agm/core";
 import { NumericDirective } from "app/core/directives/only-number.directive";
 import { ConsultaCepService } from "./consulta-cep.service";
 import { NgxMaskModule } from 'ngx-mask'
+import { SnackbarModule } from 'ngx-snackbar';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { NgxMaskModule } from 'ngx-mask'
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyCz9YJFL0cXt1IGUTVOfG6UNinhcpg6AjA'
         }),
-        NgxMaskModule.forRoot()
+        NgxMaskModule.forRoot(),
+        SnackbarModule.forRoot()
     ],
     exports: [
         BuscaComponent,

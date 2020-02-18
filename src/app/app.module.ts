@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 
 // Modules
 import { ConsultaCepModule } from './modules/consulta-cep.module';
+import { ErrorsModule } from './core/errors/errors.module';
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app.routing';
 
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app.routing';
     ReactiveFormsModule,
     ConsultaCepModule,
     CoreModule,
+    ErrorsModule,
     AppRoutingModule
   ],
   providers: [],

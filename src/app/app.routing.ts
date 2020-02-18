@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 // Components
 import { ConsultaCepComponent } from "./modules/consulta-cep.component";
+import { NotFoundComponent } from "./core/errors/not-found/not-found.component";
 
 const ROUTES: Routes = [
     { 
@@ -11,6 +12,10 @@ const ROUTES: Routes = [
         data: {
             title: 'Labs - Consulta CEP'
         }
+    },
+    {
+        path: '**',
+        component: NotFoundComponent
     }
 ]
 

@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ViaCepService } from "app/core/services/via-cep.service";
 import { ConsultaCepService } from "@modules/consulta-cep.service";
 import { Address } from "app/core/models/address";
+import { SnackbarService } from 'ngx-snackbar';
 
 @Component({
     selector: 'app-busca',
@@ -29,6 +30,8 @@ import { Address } from "app/core/models/address";
                 </div>                
             </form>
         </div>
+
+        <ngx-snackbar [position]="'bottom-center'" [max]="3"></ngx-snackbar>
     `,
     styleUrls: ['./busca.component.scss']
 })
@@ -40,7 +43,8 @@ export class BuscaComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private viaCep: ViaCepService,
-        private consultaCepService: ConsultaCepService){}
+        private consultaCepService: ConsultaCepService,
+        private snackbarService: SnackbarService){}
 
     ngOnInit(): void {
         this.buscaForm = this.formBuilder.group({
@@ -62,14 +66,36 @@ export class BuscaComponent implements OnInit {
         if(this.buscaForm.valid && !this.buscaForm.pending){
             this.viaCep.getCep(cep).subscribe((address: Address) => {
                 if (address.erro == true){
-
+                    this.invalidCep();
                 }else{
                     this.consultaCepService.changeCep(address);
                 }
             },
             (error) => {
-                console.log("Houve um erro" + error);
+                this.wsViaCepUnavailable();
             })
         }
     }
+
+    invalidCep() {
+        const _this = this;
+        this.snackbarService.add({
+          msg: '<span>O CEP Informado é Invalido 😕</span>',
+          timeout: 5000,
+          action: {
+            text: 'Fechar'
+          }
+        });
+      }
+
+      wsViaCepUnavailable() {
+        const _this = this;
+        this.snackbarService.add({
+          msg: '<strong>Serviço de consulta de CEP indisponivel</strong>',
+          timeout: 5000,
+          action: {
+            text: 'Fechar'
+          }
+        });
+      }
 }
