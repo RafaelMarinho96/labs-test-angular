@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { fromPromise } from 'rxjs/internal/observable/fromPromise';
 import { tap, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -36,7 +36,7 @@ export class GeocodeService {
     return of(true);
   }
 
-  geocodeAddress(location: string): Observable<Location> {
+  geocodeAddress(location: string): Observable<any> {
     return this.waitForMapsToLoad().pipe(
       switchMap(() => {
         return new Observable(observer => {
