@@ -7,6 +7,7 @@
 
 /* Imports */
 @import 'grid';
+@import 'breakpoint';
 @import '_base/variables';
 @import '_base/mixins';
 @import '_base/theme';
@@ -21,6 +22,11 @@
         @include make-col-offset(1);
         padding: 30px;
         border: 1px solid $light;
+
+        @include breakpoint($lg){
+            @include make-col(12);
+            @include make-col-offset(0);
+        }
     }
 
     @include element(header){

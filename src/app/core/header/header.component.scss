@@ -7,6 +7,7 @@
 
 /* Imports */
 @import 'grid';
+@import 'breakpoint';
 @import '_base/variables';
 @import '_base/mixins';
 @import '_base/theme';
@@ -42,12 +43,18 @@
         @include justify-content(space-between);
         @include align-items(center);
         height: 100%;
+
+        @include breakpoint($lg){
+            @include make-col(12);
+            @include make-col-offset(0);
+        }
     }
     
     @include element(logo){
-        color: $white;
-        font-size: 1.5em;
-        font-weight: $semibold;
+        width: 200px;
+        height: 50px;
+        background: url('../../../assets/images/logo.svg') no-repeat;
+        background-size: cover;
     }
 
     @include element(button){

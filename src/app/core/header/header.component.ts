@@ -8,7 +8,7 @@ import { LinearProgressService } from "app/shared/components/linear-progress/lin
         <div class="header">
             <div class="header__container">
                 <div class="header__row">
-                    <h1 class="header__logo">GooMaps</h1>
+                    <div class="header__logo"></div>
                     <a href="https://github.com/RafaelMarinho96/labs-test-angular" class="header__button--github">
                         <i class="fab fa-github"></i>
                     </a>

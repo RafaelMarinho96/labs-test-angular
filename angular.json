@@ -30,7 +30,8 @@
               "includePaths": [
                 ".",
                 "./src/assets/styles",
-                "./node_modules/bootstrap-4-grid/scss" 
+                "./node_modules/bootstrap-4-grid/scss",
+                "./node_modules/breakpoint-sass/stylesheets"
               ]
             },
             "scripts": []

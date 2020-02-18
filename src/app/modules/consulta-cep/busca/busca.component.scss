@@ -7,6 +7,8 @@
 
 /* Imports */
 @import 'grid';
+@import 'breakpoint';
+@import '_base/variables';
 @import '_base/mixins';
 @import '_base/theme';
 
@@ -22,5 +24,10 @@
         @include make-col-offset(1);
         background-color: lighten($gray, 22);
         padding: 20px 30px;
+
+        @include breakpoint($lg){
+            @include make-col(12);
+            @include make-col-offset(0);
+        }
     }
 }
