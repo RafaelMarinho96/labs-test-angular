@@ -5,6 +5,7 @@ Criar uma interface web para consulta de endereço a partir do CEP, baseada no w
 
 ### Executar aplicação (Local)
 `npm install`
+
 `ng serve`
 
 ### Sobre a Aplicação
