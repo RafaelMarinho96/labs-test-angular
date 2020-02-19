@@ -3,7 +3,7 @@ Criar uma interface web para consulta de endereço a partir do CEP, baseada no w
 
 **Link:** https://drive.google.com/file/d/17pBOR0BqJh37PxrJpYN8cIBvRCdVbG0n/view?usp=sharing
 
-#### Sobre a Aplicação
+### Sobre a Aplicação
 A aplicação foi desenvolvida utilizando o framework Angular 6 e as APIs, ViaCEP e Google Geolocation.
 
 O wireframe foi dividido em 3 componentes principais.
@@ -12,16 +12,16 @@ O wireframe foi dividido em 3 componentes principais.
 - **Busca**
 - **Mapa**
 
-#### Rotas da Aplicação
+### Rotas da Aplicação
 A aplicação contem apenas a rota raiz **"/"**, os demais endereços **"/xyz"** serão tratados como rotas desconhecidas.
 
 
-#### Estrutura de Diretórios
+### Estrutura de Diretórios
 - **Modules** - Todos os modulos de funcionalidade da aplicação, por exemplo os componentes de busca e mapa.
 - **Core** - Serviços singleton, componentes universais e outros recursos, por exemplo header, footer, services, directives.
 - **Shared** - componentes compartilhados da aplicação, por exemplo toast component, progress bar.
 
-#### Estrutura SCSS
+### Estrutura SCSS
 Para os estilos da aplicação a seguinte estrutura foi adotada.
 - **Base** - Arquivos comuns para toda a aplicação, por exemplo arquivos de layout e configurações (variables, mixins...).
 - **Modules** - Arquivos de componentes, por exemplo buttons, inputs, etc.
@@ -29,7 +29,7 @@ Para os estilos da aplicação a seguinte estrutura foi adotada.
 > Para a nomeação de classes css foi adotada o padrão BEM CSS.
 > **Referencia:** [http://getbem.com/introduction/](http://getbem.com/introduction/)
 
-#### Funcionamento da Aplicação
+### Funcionamento da Aplicação
 - A aplicação inicia com o componente **mapa** oculto, o mesmo somente será exibido após a inserção do CEP.
 - O usuário precisa inserir o CEP para realizar a consulta, neste momento algumas validações são aplicadas:
 	
