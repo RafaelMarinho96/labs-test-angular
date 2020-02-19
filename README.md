@@ -3,6 +3,10 @@ Criar uma interface web para consulta de endereço a partir do CEP, baseada no w
 
 **Link:** https://drive.google.com/file/d/17pBOR0BqJh37PxrJpYN8cIBvRCdVbG0n/view?usp=sharing
 
+### Executar aplicação (Local)
+`npm install`
+`ng serve`
+
 ### Sobre a Aplicação
 A aplicação foi desenvolvida utilizando o framework Angular 6 e as APIs, ViaCEP e Google Geolocation.
 
