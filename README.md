@@ -6,7 +6,7 @@ Criar uma interface web para consulta de endereço a partir do CEP, baseada no w
 ### Executar aplicação (Local)
 `npm install`
 
-`ng serve`
+`npm run ng serve`
 
 ### Sobre a Aplicação
 A aplicação foi desenvolvida utilizando o framework Angular 6 e as APIs, ViaCEP e Google Geolocation.
