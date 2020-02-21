@@ -11,6 +11,7 @@ describe('workspace-project app', () => {
     //teste a ser executado
     it('Must navigate to Not found route', () => {
         pagina.navigateToNotFoundRoute();
-        expect(pagina.getTitleNotFoundRoute()).toEqual('Pagina não Encontrada');
+        expect<any>(pagina.getTitleNotFoundRoute()).toEqual('Consultar');
+        
     });
 })
