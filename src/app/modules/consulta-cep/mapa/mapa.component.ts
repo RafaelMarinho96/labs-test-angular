@@ -11,7 +11,7 @@ import { GeocodeService } from "app/core/services/geocode.service";
 @Component({
     selector: 'app-mapa',
     template: `
-    <div class="map" [ngClass]="showHide">
+    <div class="map" [ngClass]="showHide" id="map">
       <div class="map__container">
         <div class="map__header">
           <div class="map__address">
@@ -73,7 +73,7 @@ export class MapaComponent {
           .subscribe((location: Location) => {
               console.log(location);
               this.location = location;
-              this.showHide = '';
+              this.showHide = 'map--show';
               this.ref.detectChanges();  
             });   
       } 

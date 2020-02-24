@@ -21,7 +21,7 @@ import { SnackbarService } from 'ngx-snackbar';
                     <div class="form__group--inline">
                         <label class="form__label--inline">CEP:</label>
                         <div>
-                            <input type="text" mask="00000-000" placeholder="00000-000" formControlName="cep" class="form__input--inline cep">
+                            <input type="text" mask="00000-000" placeholder="00000-000" formControlName="cep" id="cep" class="form__input--inline cep">
                             <helper-text 
                                 [value]="'Preencha o CEP'"
                                 *ngIf="buscaForm.get('cep').errors?.required && (form.submitted || buscaForm.get('cep').touched)">
@@ -31,7 +31,7 @@ import { SnackbarService } from 'ngx-snackbar';
                                 *ngIf="buscaForm.get('cep').errors?.minlength  && (form.submitted || buscaForm.get('cep').touched)">
                             </helper-text>
                         </div>
-                        <input type="submit" value="Consultar" class="form__button--inline">
+                        <input type="submit" value="Buscar" class="form__button--inline">
                     </div>
                 </div>                
             </form>
