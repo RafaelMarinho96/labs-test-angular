@@ -53,3 +53,6 @@ Para os estilos da aplicação a seguinte estrutura foi adotada.
 - Após receber o json ele irá inserir as informações do endereço na tela e realizar uma nova requisição para o serviço **geocode.service.ts**.
 - O serviço **geocode.service.ts** será o responsável obter a latitude e longitude do CEP informado.
 - Após receber estas informações o mesmo irá direcionar estes dados para o componente de mapa, que por sua vez utiliza o pacote **agm-map** para apresentar o google maps na tela.
+
+### Testes E2E
+`npm run ng e2e`
